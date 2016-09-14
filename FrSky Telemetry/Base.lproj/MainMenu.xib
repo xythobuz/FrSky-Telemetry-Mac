@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1912" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -666,15 +666,94 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="FrSky Telemetry" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="FrSky Telemetry" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="AppWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnK-SU-ndq">
+                        <rect key="frame" x="18" y="316" width="284" height="26"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="kqn-x7-yfV">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="fGv-Io-kDT">
+                                <items>
+                                    <menuItem title="No Ports available!" id="SU5-dG-Ecc">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="omw-wZ-T6y">
+                        <rect key="frame" x="319" y="312" width="147" height="32"/>
+                        <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XUE-bD-IkB">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="connectClicked:" target="QvC-M9-y7g" id="eZQ-0X-yk0"/>
+                        </connections>
+                    </button>
+                    <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-4B-AIV">
+                        <rect key="frame" x="20" y="282" width="212" height="16"/>
+                        <levelIndicatorCell key="cell" alignment="left" maxValue="255" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="i50-Gp-uCV"/>
+                    </levelIndicator>
+                    <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoX-VA-2Iq">
+                        <rect key="frame" x="248" y="283" width="212" height="16"/>
+                        <levelIndicatorCell key="cell" alignment="left" maxValue="255" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="CuO-cv-BKP"/>
+                    </levelIndicator>
+                    <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRI-8b-iz5">
+                        <rect key="frame" x="20" y="258" width="212" height="16"/>
+                        <levelIndicatorCell key="cell" alignment="left" maxValue="255" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="3Bi-xt-zee"/>
+                    </levelIndicator>
+                    <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lq5-F1-Z9B">
+                        <rect key="frame" x="248" y="258" width="212" height="16"/>
+                        <levelIndicatorCell key="cell" alignment="left" maxValue="255" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="JvN-av-itq"/>
+                    </levelIndicator>
+                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j86-9Q-pvU">
+                        <rect key="frame" x="20" y="20" width="440" height="120"/>
+                        <clipView key="contentView" ambiguous="YES" id="OOB-3h-jSN">
+                            <rect key="frame" x="1" y="1" width="438" height="118"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="WPU-6P-VVc">
+                                    <rect key="frame" x="0.0" y="0.0" width="438" height="118"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="438" height="118"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="438" height="118"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="xkg-lI-UJh">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Ejq-aF-G9d">
+                            <rect key="frame" x="423" y="1" width="16" height="118"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
             </view>
+            <connections>
+                <outlet property="connectButton" destination="omw-wZ-T6y" id="aFo-XB-dAG"/>
+                <outlet property="level1" destination="rjb-4B-AIV" id="qzA-dO-gqQ"/>
+                <outlet property="level2" destination="ZoX-VA-2Iq" id="A4a-QG-VOO"/>
+                <outlet property="level3" destination="FRI-8b-iz5" id="SKa-R3-TvD"/>
+                <outlet property="level4" destination="lq5-F1-Z9B" id="Jip-7Z-mag"/>
+                <outlet property="portList" destination="EnK-SU-ndq" id="tXj-Rp-sKj"/>
+                <outlet property="userData" destination="WPU-6P-VVc" id="0Uc-oC-SxZ"/>
+            </connections>
         </window>
     </objects>
 </document>

@@ -11,6 +11,9 @@
 		E910D8481D89E91E0051BCBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E910D8471D89E91E0051BCBC /* main.m */; };
 		E910D84A1D89E91E0051BCBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E910D8491D89E91E0051BCBC /* Assets.xcassets */; };
 		E910D84D1D89E91E0051BCBC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E910D84B1D89E91E0051BCBC /* MainMenu.xib */; };
+		E910D8571D89EAD90051BCBC /* frsky.m in Sources */ = {isa = PBXBuildFile; fileRef = E910D8561D89EAD80051BCBC /* frsky.m */; };
+		E910D85A1D89ED1C0051BCBC /* serial.c in Sources */ = {isa = PBXBuildFile; fileRef = E910D8581D89ED1C0051BCBC /* serial.c */; };
+		E910D85D1D89F08A0051BCBC /* AppWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E910D85C1D89F08A0051BCBC /* AppWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,12 @@
 		E910D8491D89E91E0051BCBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E910D84C1D89E91E0051BCBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E910D84E1D89E91E0051BCBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E910D8551D89EAD80051BCBC /* frsky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frsky.h; sourceTree = "<group>"; };
+		E910D8561D89EAD80051BCBC /* frsky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = frsky.m; sourceTree = "<group>"; };
+		E910D8581D89ED1C0051BCBC /* serial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serial.c; sourceTree = "<group>"; };
+		E910D8591D89ED1C0051BCBC /* serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serial.h; sourceTree = "<group>"; };
+		E910D85B1D89F08A0051BCBC /* AppWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWindow.h; sourceTree = "<group>"; };
+		E910D85C1D89F08A0051BCBC /* AppWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,12 @@
 			children = (
 				E910D8431D89E91E0051BCBC /* AppDelegate.h */,
 				E910D8441D89E91E0051BCBC /* AppDelegate.m */,
+				E910D85B1D89F08A0051BCBC /* AppWindow.h */,
+				E910D85C1D89F08A0051BCBC /* AppWindow.m */,
+				E910D8551D89EAD80051BCBC /* frsky.h */,
+				E910D8561D89EAD80051BCBC /* frsky.m */,
+				E910D8581D89ED1C0051BCBC /* serial.c */,
+				E910D8591D89ED1C0051BCBC /* serial.h */,
 				E910D8491D89E91E0051BCBC /* Assets.xcassets */,
 				E910D84B1D89E91E0051BCBC /* MainMenu.xib */,
 				E910D84E1D89E91E0051BCBC /* Info.plist */,
@@ -81,6 +96,7 @@
 				E910D83C1D89E91E0051BCBC /* Sources */,
 				E910D83D1D89E91E0051BCBC /* Frameworks */,
 				E910D83E1D89E91E0051BCBC /* Resources */,
+				E910D8541D89E9660051BCBC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -135,11 +151,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E910D8541D89E9660051BCBC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E910D83C1D89E91E0051BCBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E910D85D1D89F08A0051BCBC /* AppWindow.m in Sources */,
+				E910D8571D89EAD90051BCBC /* frsky.m in Sources */,
+				E910D85A1D89ED1C0051BCBC /* serial.c in Sources */,
 				E910D8481D89E91E0051BCBC /* main.m in Sources */,
 				E910D8451D89E91E0051BCBC /* AppDelegate.m in Sources */,
 			);
