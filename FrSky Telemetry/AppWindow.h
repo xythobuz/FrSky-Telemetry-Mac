@@ -17,5 +17,11 @@
 @property (weak) IBOutlet NSLevelIndicator *level3;
 @property (weak) IBOutlet NSLevelIndicator *level4;
 @property (unsafe_unretained) IBOutlet NSTextView *userData;
+@property (weak) IBOutlet NSTextField *rssiRx;
+@property (weak) IBOutlet NSTextField *rssiTx;
+@property (weak) IBOutlet NSTextField *valueA1;
+@property (weak) IBOutlet NSTextField *valueA2;
+@property (weak) IBOutlet NSLevelIndicator *batteryLevel;
+@property (weak) IBOutlet NSTextField *alarmStatus;
 
 @end

@@ -41,11 +41,16 @@ void telemetryDataHandler(unsigned char a1, unsigned char a2, unsigned char q1, 
     [[parent level2] setIntValue:q2];
     [[parent level3] setIntValue:a1];
     [[parent level4] setIntValue:a2];
+    [[parent rssiRx] setStringValue:[NSString stringWithFormat:@"RSSI RX: %d%%", q1 * 100 / 255]];
+    [[parent rssiTx] setStringValue:[NSString stringWithFormat:@"RSSI TX: %d%%", q2 * 100 / 255]];
+    [[parent valueA1] setStringValue:[NSString stringWithFormat:@"A1 Value: %d", a1]];
+    [[parent valueA2] setStringValue:[NSString stringWithFormat:@"A2 Voltage: %.2fV", a2 * (3.3 / 255.0) * (1.0 / 0.767)]];
+    [[parent batteryLevel] setFloatValue:a2 * (3.3 / 255.0) * (1.0 / 0.767) * 100.0];
 }
 
 void telemetryAlarmThresholdHandler(struct AlarmThreshold alarm) {
     NSLog(@"Telemetry Alarm Threshold: %d %d %d %d", alarm.id, alarm.dir, alarm.level, alarm.value);
-    
+    [[parent alarmStatus] setStringValue:[NSString stringWithFormat:@"%d %d %d %d", alarm.id, alarm.dir, alarm.level, alarm.value]];
 }
 
 void telemetryUserDataHandler(const unsigned char* buf, unsigned char len) {

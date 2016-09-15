@@ -676,7 +676,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnK-SU-ndq">
-                        <rect key="frame" x="18" y="316" width="284" height="26"/>
+                        <rect key="frame" x="18" y="316" width="291" height="26"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="kqn-x7-yfV">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
@@ -690,7 +690,7 @@
                         </popUpButtonCell>
                     </popUpButton>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="omw-wZ-T6y">
-                        <rect key="frame" x="319" y="312" width="147" height="32"/>
+                        <rect key="frame" x="308" y="313" width="158" height="32"/>
                         <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XUE-bD-IkB">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -715,20 +715,24 @@
                         <rect key="frame" x="248" y="258" width="212" height="16"/>
                         <levelIndicatorCell key="cell" alignment="left" maxValue="255" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="JvN-av-itq"/>
                     </levelIndicator>
+                    <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2RQ-wB-Iwf">
+                        <rect key="frame" x="82" y="184" width="376" height="16"/>
+                        <levelIndicatorCell key="cell" alignment="left" doubleValue="350" minValue="350" maxValue="420" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="03T-WN-ONc"/>
+                    </levelIndicator>
                     <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j86-9Q-pvU">
-                        <rect key="frame" x="20" y="20" width="440" height="120"/>
+                        <rect key="frame" x="20" y="20" width="440" height="100"/>
                         <clipView key="contentView" ambiguous="YES" id="OOB-3h-jSN">
-                            <rect key="frame" x="1" y="1" width="438" height="118"/>
+                            <rect key="frame" x="1" y="1" width="438" height="98"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="WPU-6P-VVc">
-                                    <rect key="frame" x="0.0" y="0.0" width="438" height="118"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="438" height="98"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="438" height="118"/>
+                                    <size key="minSize" width="438" height="98"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="438" height="118"/>
+                                    <size key="minSize" width="438" height="98"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -739,20 +743,112 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Ejq-aF-G9d">
-                            <rect key="frame" x="423" y="1" width="16" height="118"/>
+                            <rect key="frame" x="423" y="1" width="16" height="98"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-sv-VLM">
+                        <rect key="frame" x="20" y="233" width="214" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="RSSI RX: ?%" id="HSF-G2-zVX">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38q-Gu-yoR">
+                        <rect key="frame" x="246" y="233" width="214" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="RSSI TX: ?%" id="Pv3-SS-7vQ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8eC-YZ-p92">
+                        <rect key="frame" x="20" y="208" width="214" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A1 Value: ?" id="hBF-cC-ck6">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFo-hv-qdB">
+                        <rect key="frame" x="246" y="208" width="214" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A2 Voltage: ?V" id="fb6-d8-CRF">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J67-Jc-KrI">
+                        <rect key="frame" x="22" y="184" width="62" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Battery:" id="YfK-MJ-yP8">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQM-5F-ENk">
+                        <rect key="frame" x="20" y="128" width="84" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="User Data:" id="Akz-sd-Oce">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zju-i2-GdA">
+                        <rect key="frame" x="14" y="146" width="140" height="32"/>
+                        <buttonCell key="cell" type="push" title="Set Alarms" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Iq-r5-JVl">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="setAlarms:" target="QvC-M9-y7g" id="ieT-xz-m5Y"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gi1-qb-Jhm">
+                        <rect key="frame" x="258" y="128" width="202" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alarm Status" id="MbZ-RU-pvH">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7XE-tH-1dM">
+                        <rect key="frame" x="324" y="146" width="140" height="32"/>
+                        <buttonCell key="cell" type="push" title="Poll Alarms" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y1l-LC-29f">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pollAlarms:" target="QvC-M9-y7g" id="4RT-WD-gZm"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-UY-D0j">
+                        <rect key="frame" x="170" y="146" width="140" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset Alarms" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n7y-EJ-iNP">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetAlarms:" target="QvC-M9-y7g" id="K3d-XR-g69"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <connections>
+                <outlet property="alarmStatus" destination="Gi1-qb-Jhm" id="MgK-VL-dXA"/>
+                <outlet property="batteryLevel" destination="2RQ-wB-Iwf" id="UJ1-Fq-FJP"/>
                 <outlet property="connectButton" destination="omw-wZ-T6y" id="aFo-XB-dAG"/>
                 <outlet property="level1" destination="rjb-4B-AIV" id="qzA-dO-gqQ"/>
                 <outlet property="level2" destination="ZoX-VA-2Iq" id="A4a-QG-VOO"/>
                 <outlet property="level3" destination="FRI-8b-iz5" id="SKa-R3-TvD"/>
                 <outlet property="level4" destination="lq5-F1-Z9B" id="Jip-7Z-mag"/>
                 <outlet property="portList" destination="EnK-SU-ndq" id="tXj-Rp-sKj"/>
+                <outlet property="rssiRx" destination="WyS-sv-VLM" id="fFg-D7-vKb"/>
+                <outlet property="rssiTx" destination="38q-Gu-yoR" id="OAD-r3-ect"/>
                 <outlet property="userData" destination="WPU-6P-VVc" id="0Uc-oC-SxZ"/>
+                <outlet property="valueA1" destination="8eC-YZ-p92" id="Dxl-jE-A0N"/>
+                <outlet property="valueA2" destination="BFo-hv-qdB" id="YZv-7k-83B"/>
             </connections>
         </window>
     </objects>
