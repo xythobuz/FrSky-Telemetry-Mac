@@ -4,6 +4,8 @@ This is a simple macOS GUI written in Objective-C that connects to an FrSky tran
 
 It has been written for my own purposes, so the battery voltages displayed are calculated according to the voltage-divisor values I've used on my micro quad with an RX-F802 receiver. You can easily customize these formulas.
 
+![Screenshot](https://i.imgur.com/mT23HOs.png)
+
 ## Licensing
 
     ----------------------------------------------------------------------------
