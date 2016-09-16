@@ -106,14 +106,14 @@ void telemetryPoll() {
     unsigned char c;
     serialReadChar(port, (char *)&c);
     if (c == delimiter) {
-        if (bufferIndex < minPacketSize) {
+        if (bufferIndex < (minPacketSize - 1)) {
             bufferIndex = 0;
         }
         if (bufferIndex >= bufferSize) {
             bufferIndex = bufferSize - 1;
         }
         buffer[bufferIndex++] = c;
-        if (bufferIndex > minPacketSize) {
+        if (bufferIndex >= minPacketSize) {
             telemetryHandleMessage();
             bufferIndex = 0;
         }
